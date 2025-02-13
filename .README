@@ -1,0 +1,10 @@
+Learning React
+
+
+npm init
+npm i -D parcel
+npm i react
+npm i react-dom
+
+npx parcel index.html -- to run the package
+npx parcel build index.html -- to build the production ready code
