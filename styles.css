@@ -1,3 +1,18 @@
-#heading{
-    color: blueviolet;
+.nav{
+    display: flex;
+    justify-content:space-between;
+    top: 0px;
+    background-color: black;
+    color: antiquewhite;
+}
+#search{
+    height: 10px;
+    width: 300px;
+    margin-top: 30px
+}
+
+#user{
+    height: 50px;
+    width: 50px;
+    margin-top: 30px;
 }
