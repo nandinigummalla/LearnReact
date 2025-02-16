@@ -1,47 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+// exporting named constants
 
-const Header = () => (
-  <div className="head">
-    <img
-      alt="Logo"
-      className="logo"
-      src="https://media.istockphoto.com/id/1471795600/photo/food-for-people-neon-sign.jpg?s=1024x1024&w=is&k=20&c=AEcKm62IGvXh2MTR2nIW5asorJJMISP3CVSMAELrtzo="
-    />
-    <h2 className="foodapp">Food For You</h2>
-    <ul className="nav-items">
-      <li style={{ color: "blue" }}>Home</li>
-      <li>Restaurants</li>
-      <li>Profile</li>
-      <li>Cart</li>
-    </ul>
-  </div>
-);
-
-// Receiving the agruments as props and using them ... properties will come as object and use them
-// The props which are coming should match with the name of the prop coming from the card
-const ResCard = (props) => {
-  const { resData } = props;
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
-    resData?.info;
-  const { deliveryTime } = resData?.info?.sla;
-  return (
-    <div className="rescard">
-      <img
-        className="resimg"
-        alt="restaurant card"
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} Rating</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-};
-
-const ResList = [
+export const ResList = [
   {
     info: {
       id: "364443",
@@ -713,27 +672,3 @@ const ResList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-
-// Adding arguments to function is same as adding properties to the functional components
-// when mapping or looping we need to add key value for unique rendering and for performance improvement
-// not using any key <<<<< using key as index <<<<<<<< using key as unique identifier ( best way)
-const Body = () => (
-  <div className="body">
-    <input className="search" type="text" placeholder="Search for restaurant" />
-    <div className="rescontainer">
-      {ResList.map((rest) => (
-        <ResCard key={rest.info.id} resData={rest} />
-      ))}
-    </div>
-  </div>
-);
-
-const ResContainer = () => (
-  <div>
-    <Header />
-    <Body />
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ResContainer />);

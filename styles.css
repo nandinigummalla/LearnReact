@@ -70,3 +70,13 @@ ul > li{
 .foodapp{
    margin-right: 450px;
 }
+
+.filter{
+    cursor: pointer;
+    margin: 10px;
+}
+
+.filterdata{
+    display: flex;
+    justify-content: space-between;
+}
