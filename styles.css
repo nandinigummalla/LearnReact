@@ -1,4 +1,4 @@
-.nav{
+/* .nav{
     display: flex;
     justify-content:space-between;
     top: 0px;
@@ -15,4 +15,58 @@
     height: 50px;
     width: 50px;
     margin-top: 30px;
+} */
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: rgb(202, 198, 198);
+}
+
+.logo{
+    height: 50px;
+    width: 60px;
+    margin: 10px;
+}
+
+.nav-items{
+    display: flex;
+}
+
+ul > li{
+    padding: 10px;
+    list-style: none;
+}
+
+.rescontainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search{
+    margin: 10px;
+}
+
+.rescard{
+    width: 150px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.rescard:hover{
+    border: 2px solid black;
+    background-color: aliceblue;
+}
+
+.resimg{
+    height: 100px;
+    width: 150px;
+    text-align: center;
+}
+
+.foodapp{
+   margin-right: 450px;
 }
