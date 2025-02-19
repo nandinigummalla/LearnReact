@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import RestCard from "./RestCard";
 import ShimmerUI from "./ShimmerUI";
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Adding arguments to function is same as adding properties to the functional components
 // when mapping or looping we need to add key value for unique rendering and for performance improvement
@@ -14,12 +15,22 @@ const Body = () => {
   // local state variables declare with the below syntax and change with second param only
   // when the state variable changes with setState( name can be anything as our wish but as per industry rules we use this) then the whole header component will render again and reconcillation starts ( compare the both virtual doms and modify the state variable)
   // Re-rendering will happen for the whole component and the updated value will be taken as new variable and updated in the uI
+
+  // should not declare the state variables --  outside the component and also during the conditional rendering or while looping
+  // all state variables should be on the top in the component
   const [restaurantsData, setRestaurantsData] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [searchVal, setSearchVal] = useState("");
 
   //after the page rendered useEffect will be called ..useeffect contain callback function and dependent value
-  useEffect(() => FetchData(), []);
+  //in useeffect receives one manadatory call back function and optional dependency varible
+  // if there is no dependency variable then useffect will be rendered everytime the component renders
+  // if [] is dependency variable then useeffect will be rendered only once after the initial  component render
+  // if [variable] if any var is there then for every change is the var the useffect will be called/renders
+
+  useEffect(() => {
+    FetchData();
+  }, []);
 
   // calling an api and rendering the data
   const FetchData = async () => {
@@ -75,7 +86,13 @@ const Body = () => {
       </div>
       <div className="rescontainer">
         {filterData?.map((rest) => (
-          <RestCard key={rest?.info?.id} resData={rest} />
+          <Link
+            className="resCardLi"
+            key={rest?.info?.id}
+            to={`/restaurants/${rest?.info?.id}`}
+          >
+            <RestCard resData={rest} />
+          </Link>
         ))}
       </div>
     </div>

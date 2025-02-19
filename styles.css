@@ -36,7 +36,17 @@
 
 ul > li{
     padding: 10px;
-    list-style: none;
+    list-style: none;    
+}                                                                                                                     
+
+.link-style{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}  
+
+.link-style:hover{
+    color: brown;
 }
 
 .rescontainer{
@@ -49,11 +59,13 @@ ul > li{
 }
 
 .rescard{
-    width: 150px;
+    width: 250px;
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
+    border-radius: 5%;
     cursor: pointer;
+    text-align: center;
 }
 
 .rescard:hover{
@@ -62,8 +74,9 @@ ul > li{
 }
 
 .resimg{
-    height: 100px;
-    width: 150px;
+    height: 30vh;
+    width: 100%;
+    border-radius: 20%;
     text-align: center;
 }
 
@@ -97,4 +110,28 @@ ul > li{
 
 .lbtn{
     cursor: pointer;
+}
+
+.menudelitems{
+    text-align: center;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 20%;
+    background-color: rgb(249, 248, 248);
+}
+.menuitems{
+    border: 1px solid black;
+    margin: 10px;
+    width: 700px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(244, 242, 240);
+    cursor: pointer;
+}
+.menuitems:hover{
+    border: 2px solid black;
+}
+.resCardLi{
+    text-decoration: none;
+    color: black;
 }

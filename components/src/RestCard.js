@@ -5,9 +5,9 @@ import { CLOUD_URL } from "../utils/constants";
 // The props which are coming should match with the name of the prop coming from the card
 const RestCard = (props) => {
   const { resData } = props;
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, areaName } =
     resData?.info;
-  const { deliveryTime } = resData?.info?.sla;
+  const { slaString } = resData?.info?.sla;
   return (
     <div className="rescard">
       <img
@@ -16,10 +16,11 @@ const RestCard = (props) => {
         src={`${CLOUD_URL}${cloudinaryImageId}`}
       />
       <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating} Rating</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime} minutes</h4>
+      <h4>{slaString}</h4>
+      <h5>{costForTwo}</h5>
+      <h5>{cuisines.join(", ")}</h5>
+      <h5>{areaName}</h5>
     </div>
   );
 };

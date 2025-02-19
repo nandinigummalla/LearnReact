@@ -1,10 +1,28 @@
 Learning React
 
-
 npm init
 npm i -D parcel
 npm i react
 npm i react-dom
+npm i react-router-dom
 
 npx parcel index.html -- to run the package
 npx parcel build index.html -- to build the production ready code
+
+Normal way to create routes with components
+const routes = createBrowserRouter([
+{ path: "/", element: <App />, errorElement: <Error /> },
+{
+path: "/about",
+element: <About />,
+},
+{
+path: "/contact",
+element: <Contact />,
+},
+]);
+
+
+two types of routing
+client side routing  -- all apps will load for first time and for evry call it just load that component
+server side routing - reloading the page and getting the page by making network calls
