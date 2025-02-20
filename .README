@@ -22,7 +22,9 @@ element: <Contact />,
 },
 ]);
 
-
 two types of routing
-client side routing  -- all apps will load for first time and for evry call it just load that component
+client side routing -- all apps will load for first time and for evry call it just load that component
 server side routing - reloading the page and getting the page by making network calls
+
+class component lifecycle
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/

@@ -135,3 +135,10 @@ ul > li{
     text-decoration: none;
     color: black;
 }
+
+.user{
+    border: 1px solid black;
+    margin: 10px;
+    width: 500px;
+    text-align: center;
+}
