@@ -1,4 +1,5 @@
 import React from "react";
+import { GITHUB_URL } from "../utils/constants";
 class UserClass extends React.Component {
   // constructer will be called when the class instance is created(that is class component is loaded)
   // props need to be accessed in the constructor and to access those values we need to super method with that props(calling parent class)
@@ -16,7 +17,7 @@ class UserClass extends React.Component {
   async componentDidMount() {
     // this.timer = setInterval(() => console.log("interval1"), 1000);
 
-    let apiData = await fetch("https://api.github.com/users/nandinigummalla");
+    let apiData = await fetch(`${GITHUB_URL}`);
     let res = await apiData.json();
     this.setState({
       response: res,

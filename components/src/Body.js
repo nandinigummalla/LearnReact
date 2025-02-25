@@ -5,6 +5,8 @@ import RestCard from "./RestCard";
 import ShimmerUI from "./ShimmerUI";
 import React from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { HOMEPAGE_URL } from "../utils/constants";
 
 // Adding arguments to function is same as adding properties to the functional components
 // when mapping or looping we need to add key value for unique rendering and for performance improvement
@@ -34,9 +36,7 @@ const Body = () => {
 
   // calling an api and rendering the data
   const FetchData = async () => {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=14.74640&lng=78.54480&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const res = await fetch(`${HOMEPAGE_URL}`);
     const json = await res.json();
     const dataJson =
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -44,6 +44,14 @@ const Body = () => {
     setRestaurantsData(dataJson);
     setFilterData(dataJson);
   };
+  let online = useOnlineStatus();
+  if (!online) {
+    return (
+      <div>
+        <h1> OOPS somethings went wrong Please connect to the internet</h1>
+      </div>
+    );
+  }
 
   if (restaurantsData?.length === 0) {
     return <ShimmerUI />;
