@@ -9,18 +9,20 @@ const RestCard = (props) => {
     resData?.info;
   const { slaString } = resData?.info?.sla;
   return (
-    <div className="rescard">
+    <div className="m-4 border-1 rounded-xl bg-gray-100 items-center size-120 shadow-xl hover:bg-gray-200 hover:border-2 ">
       <img
-        className="resimg"
+        className="rounded-4xl h-80 w-lg"
         alt="restaurant card"
         src={`${CLOUD_URL}${cloudinaryImageId}`}
       />
-      <h3>{name}</h3>
-      <h4>{avgRating} Rating</h4>
-      <h4>{slaString}</h4>
-      <h5>{costForTwo}</h5>
-      <h5>{cuisines.join(", ")}</h5>
-      <h5>{areaName}</h5>
+      <div className="text-center p-2">
+        <h3 className="font-bold">{name}</h3>
+        <h4>{avgRating} Rating</h4>
+        <h4>{slaString}</h4>
+        <h5>{costForTwo}</h5>
+        <h5>{cuisines.join(", ")}</h5>
+        <h5>{areaName}</h5>
+      </div>
     </div>
   );
 };

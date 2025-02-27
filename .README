@@ -31,3 +31,27 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 React Learn
 https://react.dev/learn
+
+Adding tailwind
+
+npm install tailwindcss @tailwindcss/postcss
+
+Create a file and add below
+
+.postcssrc
+
+{
+"plugins": {
+"@tailwindcss/postcss": {}
+}
+}
+
+Add the bwlow line as below
+index.css
+@import "tailwindcss";
+
+References:
+● https://styled-components.com/
+● https://tailwindcss.com/
+● https://getbootstrap.com/
+● Material UI - https://mui.com/

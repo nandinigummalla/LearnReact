@@ -49,10 +49,15 @@ class UserClass extends React.Component {
     console.log(this.props.name + "Render called");
 
     return (
-      <div className="user">
-        <h1>{this.state.response.name}</h1>
-        <img src={this.state.response.avatar_url} />
-        <h1>Repos : {this.state.response.public_repos}</h1>
+      <div className="m-10 bg-gray-100 border-2 size-1/3 text-center shadow-xl hover:border-4">
+        <h1 className="text-2xl m-5 font-extrabold">
+          {this.state.response.name}
+        </h1>
+        <img
+          className="rounded-4xl ml-10"
+          src={this.state.response.avatar_url}
+        />
+        <h1 className="m-5">Repos : {this.state.response.public_repos}</h1>
 
         <button
           onClick={() =>

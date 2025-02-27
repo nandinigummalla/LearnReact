@@ -11,10 +11,12 @@ const MenuCard = () => {
   if (response === null) return <ShimmerUI />;
 
   return (
-    <div className="menu">
-      <h1>{response[2]?.card?.card?.info?.name}</h1>
-      <div className="menudelivery">
-        <div className="menudelitems">
+    <div className="m-4 p-2 text-center">
+      <h1 className="font-extrabold m-1">
+        {response[2]?.card?.card?.info?.name}
+      </h1>
+      <div className="m-2">
+        <div className="border-2 w-md ml-180 m-4">
           <h4>{response[2]?.card?.card?.info?.avgRating}</h4>
           <h4>{response[2]?.card?.card?.info?.costForTwoMessage}</h4>
           <h4>{response[2]?.card?.card?.info?.cuisines.join(", ")}</h4>
@@ -26,9 +28,12 @@ const MenuCard = () => {
               response[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.categoryId
             }
           >
-            <h2 className="cusinetitle">{rest?.card?.card?.title}</h2>
+            <h2 className="font-bold">{rest?.card?.card?.title}</h2>
             {rest?.card?.card?.itemCards?.map((menuitm) => (
-              <div key={menuitm?.card?.info?.id} className="menuitems">
+              <div
+                key={menuitm?.card?.info?.id}
+                className="border-1 m-2 p-2 hover:border-2"
+              >
                 <h4>{menuitm?.card?.info?.name}</h4>
                 <h4>Price: {menuitm?.card?.info?.price / 100}</h4>
                 <h4>

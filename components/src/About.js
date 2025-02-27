@@ -26,11 +26,11 @@ class About extends Component {
   render() {
     console.log("called in  parent render ");
     return (
-      <div className="about">
-        <h1> About Page</h1>
+      <div className="m-6 items-center">
+        {/* <h1> About Page</h1> */}
         <UserClass name={"First"} />
 
-        <UserFun />
+        {/* <UserFun /> */}
         {/* <UserClass name={"Second"} />
         <UserClass name={"third"} /> */}
       </div>

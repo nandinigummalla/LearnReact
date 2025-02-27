@@ -59,21 +59,21 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filterdata">
-        <div className="search">
+      <div className="flex justify-between m-5">
+        <div className="flex">
           <input
-            className="searchbar"
+            className="border-2 p-1"
             type="text"
             placeholder="Search for restaurant"
             onChange={(e) => setSearchVal(e.target.value)}
           />
           <button
-            className="submit"
+            className="p-3 mx-2 rounded-ee-sm bg-green-300 cursor-pointer"
             onClick={() => {
-              const resp = restaurantsData.filter((res) =>
+              const resp = restaurantsData?.filter((res) =>
                 (res?.info?.name)
                   .toLocaleLowerCase()
-                  .includes(searchVal.toLowerCase())
+                  .includes(searchVal?.toLowerCase())
               );
               setFilterData(resp);
             }}
@@ -82,7 +82,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter"
+          className="rounded-xl p-2 bg-blue-200 cursor-pointer"
           onClick={() => {
             return setFilterData(
               restaurantsData?.filter((res) => res?.info?.avgRating > 4.3)
@@ -92,7 +92,7 @@ const Body = () => {
           Get Rop Rated Restaurants
         </button>
       </div>
-      <div className="rescontainer">
+      <div className="flex flex-wrap p-2 m-4">
         {filterData?.map((rest) => (
           <Link
             className="resCardLi"
